@@ -1,10 +1,17 @@
+* {
+  box-sizing: border-box;
+}
 body {
   background-color:lightblue;
-  background-image: url(morning.jpg);
+  background-image: linear-gradient(
+    to right bottom, 
+    rgba(161, 134, 92, 0.8),
+    rgba(7, 158, 20, 0.8),  rgba(23, 89, 175, 0.747)  ),url(morning.jpg);
   width: 100%;
   height:100%;
   background-repeat: repeat;
   background-size: cover;
+  background-position: center;
   padding:0;
 
 }
@@ -13,7 +20,8 @@ body {
   max-width: 960px;
   margin: 100px auto;
   text-align: center;
-  background-color: #f16059;
+  background: rgb(63,94,251);
+  background: linear-gradient(45deg, rgba(11, 172, 221, 0.904) 5%, rgba(109,88,216,1) 9%, rgba(146,83,188,1) 51%, rgba(205,76,143,1) 81%, rgba(237,72,119,1) 100%);
   border-radius: 50px;
 }
 body {
@@ -23,7 +31,7 @@ body {
   padding: 0px;
   text-transform: uppercase;
 }
-header{
+.digital-clock{
   font-size: 24px;
   line-height: 48px;
   padding: 10px 0px 10px;
@@ -33,9 +41,9 @@ h4 {
   font-family: 'Bungee', cursive;
 }
 h4 #clock {
-  font-size: 36px;
+  font-size: 56px;
   display: block;
-  padding: 5px 0px;
+  padding: 30px 0px;
 }
 h1, h2, h3, h6 {
   font-family: 'Bungee Shade', cursive;
@@ -57,14 +65,14 @@ blockquote:before { content: '"'; }
 blockquote:after { content: '"'; }
 
 #lolcat {
-  margin: 0 auto;
-  -webkit-border-radius: 100px;
-  -moz-border-radius: 100px;
+  margin: 0;
+  -webkit-border-radius: 500px;
+  -moz-border-radius: 500px;
   border-radius: 10px;
-  border:10px solid #222;
+  border:20px solid #222;
 }
 #wakeUpTimeSelector, #lunchTimeSelector, #napTimeSelector {
-  padding: 10px 10px;
+  padding: 10px 20px;
 }
 #partyTimeButton {
   background-color: #222;
@@ -72,6 +80,7 @@ blockquote:after { content: '"'; }
   font-family: 'Bungee', cursive;
   font-size: 18px;
   color: #fff;
+  color: rgb(203, 221, 221);
   border: none;
   border-radius: 5px;
   padding: 10px 0;
@@ -81,4 +90,21 @@ blockquote:after { content: '"'; }
 footer p {
   text-transform: uppercase;
   font-size: 12px;
+}
+
+@media(max-width: 1124px){
+  .page{
+    width: 90%;
+
+  }
+  .digital-clock{
+    font-size: 3rem;
+		line-height: 1.1;
+  }
+}
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="page"] {
+    width: 100%;
+  }
 }
