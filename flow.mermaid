@@ -1,0 +1,18 @@
+sequenceDiagram
+    participant Main as main.py
+    participant Spider as Scrapy Spider
+    participant Logger as Logger (file+console)
+    participant Email as email.py (send_email)
+    participant SMTP as SMTP Server
+    participant Rec as Recipient
+
+    Main->>Spider: start crawl (start_date, end_date)
+    Spider->>Logger: log events (console + transparency_job.log)
+    Spider-->>Main: finished (jobs list, record_count) or error
+    Main->>Email: send_email(jobs, record_count)
+    Email->>Email: build_email() (count statuses, generate HTML + plain text)
+    Email->>SMTP: connect, starttls, login
+    Email->>SMTP: sendmail(msg)
+    SMTP-->>Rec: deliver email
+    Email-->>Main: return success / print error
+    Main->>Logger: log final status
